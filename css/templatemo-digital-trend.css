@@ -31,38 +31,49 @@ https://templatemo.com/tm-538-digital-trend
 }
 
 :root {
-  --primary-color: #057AFF;
-  --secondary-color: #1B2F45;
-  --white-color: #ffffff;
-  --dark-color: #0B1826;
-  --project-bg: #f0f8ff;
-  --menu-bg: #0c8195;
-  --light-color: #F4F7FF;
+  --primary-color: #2C3E50;
+  /* Deep blue-gray - professional and grounding */
+  --secondary-color: #3498DB;
+  /* Clear blue - represents technology/innovation */
+  --dark-color: #2C3E50;
+  /* Matching primary for consistency */
+  --light-color: #F8F9FA;
+  /* Clean, crisp white with slight warmth */
+  --p-color: #6C7A89;
+  /* Sophisticated gray for body text */
+  --border-color: #ECF0F1;
+  /* Subtle border color */
+  --link-color: #3498DB;
+  /* Matching secondary for consistency */
 
-  --title-color: #15141a;
-  --gray-color: #909090;
-  --link-color: #404040;
-  --p-color: #666262;
-
-  --base-font-family: 'Plain-Light', sans-serif;
-  --title-font-family: 'Plain-Regular', sans-serif;
-  --font-bold-family: 'Plain-Bold', sans-serif;
-  --font-weight-bold: bold;
+  --font-weight-bold: 700;
+  --font-weight-normal: 400;
+  --font-weight-light: 300;
 
   --h1-font-size: 42px;
-  --h2-font-size: 32px;
-  --h3-font-size: 24px;
-  --p-font-size: 18px;
+  --h2-font-size: 36px;
+  --h3-font-size: 28px;
+  --h4-font-size: 24px;
+  --h5-font-size: 20px;
+  --h6-font-size: 16px;
+  --p-font-size: 16px;
   --base-font-size: 16px;
-  --menu-font-size: 14px;
+  --menu-font-size: 15px;
 
-  --border-radius-large: 100px;
-  --border-radius-small: 5px;
+  --border-radius-large: 8px;
+  --border-radius-small: 4px;
 }
 
 body {
   background: var(--light-color);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-size: var(--base-font-size);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.8;
+  color: var(--p-color);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -147,20 +158,34 @@ blockquote {
 
 /* BUTTON */
 .custom-btn {
-  padding: 12px 24px;
-  font-weight: 600;
+  padding: 14px 24px;
+  border-radius: var(--border-radius-small);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
-  border-radius: 6px;
 }
 
-.btn-outline {
-  border: 2px solid var(--light-color);
+.btn-bg {
+  background: var(--primary-color);
+  border: none;
   color: var(--light-color);
 }
 
+.btn-bg:hover {
+  background: var(--secondary-color);
+  color: var(--light-color);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
 .btn-outline:hover {
-  background: var(--light-color);
-  color: var(--dark-color);
+  background: var(--primary-color);
+  color: var(--light-color);
 }
 
 
@@ -201,7 +226,7 @@ a:focus {
 }
 
 .section-padding {
-  padding: 8em 0;
+  padding: 8rem 0;
 }
 
 .section-padding-half {
@@ -220,30 +245,40 @@ a:focus {
   -----------------------------------------*/
 
 .navbar {
-  background: var(--menu-bg);
-  z-index: 2;
-  top: 0;
-  right: 0;
-  left: 0;
-  padding: 1.5em;
+  background: var(--light-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1.8rem 0;
 }
 
 .navbar-brand {
-  color: var(--white-color);
-  font-size: var(--h2-font-size);
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  padding-left: 1rem;
 }
 
 .nav-link {
-  color: var(--white-color);
+  color: var(--dark-color);
   font-size: var(--menu-font-size);
-  letter-spacing: 0.4px;
-  margin: 0 1.6em;
-  padding: 0.6em;
+  font-weight: var(--font-weight-bold);
+  padding: 12px 24px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
 }
 
-.nav-link.active,
-.nav-link:hover {
+.nav-link:hover,
+.nav-link.active {
   color: var(--secondary-color);
+}
+
+.nav-link.contact {
+  background: var(--primary-color);
+  color: var(--light-color);
+  border-radius: var(--border-radius-small);
+}
+
+.nav-link.contact:hover {
+  background: var(--secondary-color);
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -341,10 +376,10 @@ a:focus {
   -----------------------------------------*/
 
 .hero {
-  background: linear-gradient(to right, var(--secondary-color), var(--dark-color));
-  min-height: 100vh;
-  position: relative;
-  padding-top: 100px;
+  background: linear-gradient(to right, rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.8)), url('../images/project-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 12rem 0;
 }
 
 .hero-text {
@@ -355,6 +390,35 @@ a:focus {
   font-size: 3.2em;
   line-height: 1.2;
   margin-bottom: 1.5rem;
+}
+
+.hero-image {
+  text-align: center;
+  padding: 2rem;
+}
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border: 4px solid var(--light-color);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 991px) {
+  .hero-image {
+    margin-top: 3rem;
+  }
+
+  .profile-pic {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 .text-primary-color {
@@ -945,4 +1009,136 @@ a:focus {
 
 .writing-section .btn-primary {
   margin-bottom: 40px;
+}
+
+/* Modern, clean button styles */
+.custom-btn {
+  padding: 14px 24px;
+  border-radius: var(--border-radius-small);
+  font-size: 14px;
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn-bg {
+  background: var(--primary-color);
+  border: none;
+  color: var(--light-color);
+}
+
+.btn-bg:hover {
+  background: var(--secondary-color);
+  color: var(--light-color);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.btn-outline:hover {
+  background: var(--primary-color);
+  color: var(--light-color);
+}
+
+/* Refined navigation */
+.navbar {
+  background: var(--light-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 1.8rem 0;
+}
+
+.navbar-brand {
+  color: var(--primary-color);
+  font-size: 24px;
+  font-weight: var(--font-weight-bold);
+  padding-left: 1rem;
+}
+
+.nav-link {
+  color: var(--dark-color);
+  font-size: var(--menu-font-size);
+  font-weight: var(--font-weight-bold);
+  padding: 12px 24px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--secondary-color);
+}
+
+.nav-link.contact {
+  background: var(--primary-color);
+  color: var(--light-color);
+  border-radius: var(--border-radius-small);
+}
+
+.nav-link.contact:hover {
+  background: var(--secondary-color);
+}
+
+/* Sophisticated section styling */
+.section-padding {
+  padding: 8rem 0;
+}
+
+.hero {
+  background: linear-gradient(to right, rgba(44, 62, 80, 0.95), rgba(44, 62, 80, 0.8)), url('../images/project-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 12rem 0;
+}
+
+.hero-text {
+  color: var(--light-color);
+}
+
+/* Clean card styling */
+.card {
+  border: none;
+  border-radius: var(--border-radius-large);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Refined typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-color);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+/* Subtle animations */
+[data-aos] {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
